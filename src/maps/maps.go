@@ -13,7 +13,7 @@ func main(){
   // the type of both the key and the value.
   person := map[string]string{
     "Name": "Luke",
-    "Phone": "774-573-8963",
+    "Phone": "555-555-1212",
   }
   name := person["Name"];
   phone := person["Phone"];
