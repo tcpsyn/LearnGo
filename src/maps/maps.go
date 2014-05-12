@@ -2,6 +2,8 @@
 package main
 import (
   "fmt"
+  "math/rand"
+  "time"
 )
 
 
@@ -34,8 +36,21 @@ func main(){
     fmt.Printf("I like to eat: %s\n",i);
   }
 
-  // Looping through and array and slice. 
+  // Looping through and array and slice.
   for i := 0; i < len(gospels); i++ {
     fmt.Printf("%s likes to eat %s\n",gospels[i],foods[i]);
   }
+
+  fmt.Println();
+
+  // Playing with random numbers, which is way harder than it should be.
+  for _,i :=range gospels{
+    rand.Seed(time.Now().UTC().UnixNano());
+    r := randInt(0,len(foods));
+    fmt.Printf("%s likes to eat %s, weirdo.\n",i,foods[r]);
+  }
+}
+
+func randInt(min int, max int) int{
+  return min + rand.Intn(max-min);
 }
