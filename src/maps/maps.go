@@ -1,5 +1,5 @@
 /* hello.go */
-package maps
+package main
 import (
   "fmt"
 )
@@ -27,4 +27,15 @@ func main(){
     fmt.Printf("The gospel according to %s\n",element);
   }
 
+  // And now a slice.
+  // I don't have to define the length of a slice.
+  foods := []string{"Cornbread","French Bread","Eggs","Toast"}
+  for _,i := range foods{
+    fmt.Printf("I like to eat: %s\n",i);
+  }
+
+  // Looping through and array and slice. 
+  for i := 0; i < len(gospels); i++ {
+    fmt.Printf("%s likes to eat %s\n",gospels[i],foods[i]);
+  }
 }
